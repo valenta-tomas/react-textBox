@@ -1,0 +1,16 @@
+﻿.button{
+    background-color: blue;
+    color:white;
+    border: none;
+    width: 90px;
+    height: 25px;
+    border-radius: 15%;
+    box-shadow: 5px 5px 10px black;
+    text-shadow:2px 1px 3px black ;
+    font-size: 90%;
+    font-family: "Monaco", "Courier New", monospace;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+}

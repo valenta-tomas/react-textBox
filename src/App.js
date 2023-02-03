@@ -4,6 +4,8 @@ import 'devextreme/dist/css/dx.light.css';
 
 import TextBox from 'devextreme-react/text-box';
 
+import Button from "./components/Button"
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -13,7 +15,6 @@ class App extends React.Component {
         };  
 
     }
-
     render() {
         return (
             <div>
@@ -43,6 +44,9 @@ class App extends React.Component {
                     readOnly={true}
                     value={"text, který nejde měnit"}
                 />
+                <Button>Button 1</Button>
+                <Button>Button 2</Button>
+                <Button>Button 3</Button>
                 <div>{this.state.text}</div>
                 <div>{this.state.cislo+this.state.cislo}</div>
             </div>
