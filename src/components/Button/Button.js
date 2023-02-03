@@ -1,8 +1,19 @@
 ﻿import React from "react";
-import "./Button.css";
-const Button = ({ children, ...rest}) =>{
+//import "./Button.css";
+import * as PropTypes from "prop-types";
+
+
+const Button = ({ children,background,color,width ,height,fontSize,...rest}) =>{
+    const style ={
+        backgroundColor:background,
+        color:color,
+        border:"none",
+        width:width,
+        height:height,
+        fontSize:fontSize,
+    }
     return(
-        <button className={"button"} {...rest}>
+        <button className={"button"} style={style} {...rest}>
             { children }
         </button>
     );
