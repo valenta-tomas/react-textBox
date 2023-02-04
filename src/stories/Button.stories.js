@@ -10,8 +10,7 @@ export default {
     width:100,
     height:50,
         fontSize:20}
-}
-
+} 
 export const test= (args)=> <Button {...args}/>;
 export const test2= {args: {children: "zkouska",background: "blue", fontSize: 20, width: 150,height: 80}}
 
