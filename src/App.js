@@ -1,58 +1,30 @@
-import React from 'react';
-
 import 'devextreme/dist/css/dx.light.css';
+import React, { Component } from 'react'
+import {TextBox } from 'devextreme-react'
+import { useState } from 'react';
 
-import TextBox from 'devextreme-react/text-box';
-
-import Button from "./components/Button"
-
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: 'Test',
-            cislo: 5
-        };  
-
-    }
-    render() {
-        return (
-            <div>
-                <TextBox
-                mode={"text"}
-                placeholder={"zadej svoje jméno"}
-                showClearButton={true}/>
-                <br />
-                <TextBox
-                    mode={"email"}
-                    placeholder={"zadej svůj e-mail"}
-                    showClearButton={true}
-                />
-                <br />
-                <TextBox
-                    mode={"password"}
-                    placeholder={"zadej svůje heslo"}
-                    showClearButton={true}
-                />
-                <br />
-                <TextBox
-                    mask="+000-000-000-000"
-                    showClearButton={true}
-                />
-                <br/>
-                <TextBox
-                    readOnly={true}
-                    value={"text, který nejde měnit"}
-                />
-                <Button>Button 1</Button>
-                <Button>Button 2</Button>
-                <Button>Button 3</Button>
-                <div>{this.state.text}</div>
-                <div>{this.state.cislo+this.state.cislo}</div>
-            </div>
-        );
-    }
-    
+function Valid(valid = "pending") {
+  const[value,setValue] = useState(valid);
+  let v = value==="pending" ? "pending" : "valid";
+  return(v)
 }
 
-export default App;
+export default class App extends Component {
+
+
+  
+  render() {
+    return (
+      <TextBox 
+       label='zadej email'
+       labelMode='floating'
+        mode='mail'
+        validationStatus="pending"//{Valid}
+        maxLength={15}
+         onChange={()=> console.log("změna")}
+          onCopy={()=>console.log("copy")}
+   
+      /> 
+    )
+  }
+}
